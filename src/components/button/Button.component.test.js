@@ -18,13 +18,13 @@ describe('Button', () => {
     test('should create', () => {
         expect(component).toBeDefined();
     })
-    test('text should be hello', () => {
-        const { getByText } = render(Comp, { props: { name: 'World' } })
+    // test('text should be hello', () => {
+    //     const { getByText } = render(Comp, { props: { name: 'World' } })
 
-        expect(getByText('Hello World!')).toBeInTheDocument()
+    //     expect(getByText('Hello World!')).toBeInTheDocument()
       
-        console.log(component.debug);
-    })
+    //     console.log(component.debug);
+    // })
 
 
 
