@@ -3,7 +3,8 @@
   export let text,
     color,
     outline,
-    disabled = false;
+    disabled = false,
+    ariaLabel;
 
   import { createEventDispatcher } from "svelte";
 
@@ -17,15 +18,21 @@
   
 </script>
 
-<style>
+<style type='text/scss'>
   /* styles go here */
   /*
     default
     primary
     secondary
   */
-  button {
-    
+  [disabled] {
+    background: lightgray;
+  }
+  .outline {
+    background: none;
+    &[disabled] {
+      color: red;
+    }
   }
 </style>
 
@@ -34,11 +41,7 @@
   on:click={handleClick}
   {disabled}
   class={color ? `color-${color}` : 'color-default'}
-  class:outline={outline === 'true'}>
+  class:outline={outline === 'true'}
+  aria-label="{ariaLabel}">
   <slot>{text}</slot>
 </button>
-
-<!-- <button on:click={handleClick}
-  disabled="{{disabled}}">
-  <slot>{text}</slot>
-</button> -->
