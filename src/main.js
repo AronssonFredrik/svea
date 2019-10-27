@@ -1,10 +1,4 @@
-import App from './App.svelte';
+// Add components that should be shareable
 
-const app = new App({
-	target: document.body,
-	props: {
-		name: 'world'
-	}
-});
-
-export default app;
+import Button from './components/Button.svelte';
+export { Button };
