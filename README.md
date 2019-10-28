@@ -1,7 +1,6 @@
 # Svea
 ![npm](https://img.shields.io/npm/v/svea.svg)
-
-Component Library for Svelte v3
+Component Library for Svelte v3, documented on [Storybook](https://aronssonfredrik.github.io/svea).
 
 
 ## Get started
