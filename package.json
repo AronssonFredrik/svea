@@ -1,6 +1,6 @@
 {
   "name": "svea",
-  "version": "1.0.0rc8",
+  "version": "1.0.0rc9",
   "description": "Component library",
   "main": "dist/svea.js",
   "module": "dist/svea.module.js",
@@ -49,15 +49,10 @@
     "svelte-loader": "^2.13.6",
     "svelte-preprocess": "^3.2.0-alpha.2"
   },
-  "dependencies": {
-    "sirv-cli": "^0.4.4"
-  },
   "scripts": {
     "build": "rollup -c",
     "autobuild": "rollup -c -w",
     "dev": "run-p start:dev autobuild",
-    "start": "sirv public --single",
-    "start:dev": "sirv public --single --dev",
     "release:major": "changelog -M && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version major && git push origin && git push origin --tags",
     "release:minor": "changelog -m && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version minor && git push origin && git push origin --tags",
     "release:patch": "changelog -p && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version patch && git push origin && git push origin --tags",

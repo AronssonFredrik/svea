@@ -26,12 +26,6 @@ export default {
       format: 'umd',
       sourcemap: true,
       name,
-    },
-    {
-      sourcemap: true,
-      format: 'iife',
-      name: 'app',
-      file: 'public/bundle.js'
     }
   ],
   plugins: [
@@ -41,7 +35,7 @@ export default {
       // generate: production ? 'dom' : 'ssr',
       hydratable: true,
 			css: css => {
-				css.write('public/bundle.css');
+				css.write('dist/bundle.css');
 			},
       preprocess: autoPreprocess({
         postcss: {
