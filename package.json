@@ -1,28 +1,64 @@
 {
-  "name": "svelte-app",
-  "version": "1.0.0",
+  "name": "svea",
+  "version": "1.0.0rc9",
+  "description": "Component library",
+  "main": "dist/svea.js",
+  "module": "dist/svea.module.js",
+  "svelte": "src/main.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AronssonFredrik/svea.git"
+  },
+  "keywords": [
+    "component",
+    "library",
+    "svelte"
+  ],
+  "author": "Fredrik Aronsson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AronssonFredrik/svea/issues"
+  },
+  "homepage": "https://github.com/AronssonFredrik/svea#readme",
+  "peerDependencies": {
+    "svelte": "^3.4.4"
+  },
   "devDependencies": {
+    "@babel/core": "^7.6.4",
+    "@storybook/addon-a11y": "^5.2.5",
+    "@storybook/addon-actions": "^5.2.5",
+    "@storybook/addon-knobs": "^5.2.5",
+    "@storybook/addon-links": "^5.2.5",
+    "@storybook/addon-notes": "^5.2.5",
+    "@storybook/addons": "^5.2.5",
+    "@storybook/svelte": "^5.2.5",
+    "autoprefixer": "^9.7.0",
+    "babel-loader": "^8.0.6",
     "generate-changelog": "^1.8.0",
+    "gh-pages": "^2.1.1",
     "npm-run-all": "^4.1.5",
     "rollup": "^1.12.0",
+    "rollup-plugin-analyzer": "^3.2.1",
+    "rollup-plugin-bundle-size": "^1.0.3",
     "rollup-plugin-commonjs": "^10.0.0",
     "rollup-plugin-livereload": "^1.0.0",
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-svelte": "^5.0.3",
     "rollup-plugin-terser": "^4.0.4",
-    "svelte": "^3.0.0"
-  },
-  "dependencies": {
-    "sirv-cli": "^0.4.4"
+    "svelte": "^3.12.1",
+    "svelte-loader": "^2.13.6",
+    "svelte-preprocess": "^3.2.0-alpha.2"
   },
   "scripts": {
     "build": "rollup -c",
     "autobuild": "rollup -c -w",
     "dev": "run-p start:dev autobuild",
-    "start": "sirv public --single",
-    "start:dev": "sirv public --single --dev",
     "release:major": "changelog -M && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version major && git push origin && git push origin --tags",
     "release:minor": "changelog -m && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version minor && git push origin && git push origin --tags",
-    "release:patch": "changelog -p && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version patch && git push origin && git push origin --tags"
+    "release:patch": "changelog -p && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version patch && git push origin && git push origin --tags",
+    "pkg:dev": "npm run build && npm publish --tag dev",
+    "pkg:prod": "npm run build && npm publish --tag",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook && gh-pages -d storybook-static"
   }
 }
