@@ -1,5 +1,4 @@
 import analyze from 'rollup-plugin-analyzer';
-import autoPreprocess from 'svelte-preprocess';
 import bundleSize from 'rollup-plugin-bundle-size';
 import commonjs from 'rollup-plugin-commonjs';
 import resolve from 'rollup-plugin-node-resolve';
@@ -38,19 +37,8 @@ export default {
 			dev: !production,
 			// we'll extract any component CSS out into
 			// a separate file — better for performance
-			css: css => {
-				css.write('public/bundle.css');
-			},
-
+			css: css => css.write('dist/bundle.css'),
 			hydratable: true,
-			// 		css: css => {
-			// 			css.write('dist/bundle.css');
-			// 		},
-			//   preprocess: autoPreprocess({
-			//     postcss: {
-			//       plugins: [require('autoprefixer')()],
-			//     },
-			//   })
 			preprocess: {
 				style: ({ content, attributes }) => {
 					if (attributes.type !== 'text/scss') return;

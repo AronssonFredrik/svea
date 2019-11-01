@@ -1,5 +1,5 @@
 <script>
-  import Button from "../../src/components/Button.svelte";
+  import { Button } from "../../dist/svea.module"
   export let text;
   let handleClickEvent = event => console.log(event.detail.event);
 </script>
