@@ -1,5 +1,6 @@
-// import { Button } from '../../dist/svea.module';
+import { Button } from '../../dist/svea.module';
 import BtnStyle from './BtnStyle.svelte';
+import Playground from './Playground.svelte';
 import ButtonReadme from './README.md';
 import { action } from '@storybook/addon-actions';
 
@@ -10,16 +11,10 @@ export default {
     notes: { markdown: ButtonReadme }
   }
 };
-// export const primary = () => ({
-//   Component: Button,
-//   props: { text: 'Hello'}  
-// });
 
+export const themes = () => ({ Component: BtnStyle });
 
-export const secondary = () => ({
-  Component: BtnStyle,
-  props: { text: 'Hello' }
-});
+export const playground = () => ({ Component: Playground });
 
 // export const text = () => ({
 //   Component: Button,
