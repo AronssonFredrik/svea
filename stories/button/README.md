@@ -7,24 +7,24 @@ Declarative component [...]
 ## Basic usage
 Import it via script tag:
 
-```js
+```html
 <script>
     import Button from 'svea';
+    ...
 </script>
-```
 
-Include it to the html:
 
-```html
 <Button>Click here</Button>
 ```
 
 ## Properties
+Following props are available for `button`.
 
 | Prop | Type | Description | Default |
 | ------------- |-------------| -----| -----|
 | disabled | boolean | specifies if the button should be disabled | false |
 | aria-label | value | specifies the aria-label for the button | null |
+| theme | value | specifies the theme for the button (styling) | default (tbd) |
 | outline | boolean | specifies if the button should be outlined (styling) | true/false (tbd) |
 
 #### Button types
