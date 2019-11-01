@@ -15,10 +15,9 @@
       event: event
     });
   };
-  
 </script>
 
-<style type='text/scss'>
+<style type="text/scss">
   /* styles go here */
   /*
     default
@@ -42,6 +41,6 @@
   {disabled}
   class={color ? `color-${color}` : 'color-default'}
   class:outline={outline === 'true'}
-  aria-label="{ariaLabel}">
+  aria-label={ariaLabel}>
   <slot>{text}</slot>
 </button>

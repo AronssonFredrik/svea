@@ -1,56 +1,32 @@
-# Button :star:
+# Button
 
-Application button.
+## Summary
 
-```js
-import Button from 'components/Button';
-```
+Declarative component [...] 
 
-<!-- Brief summary of what the component is, and what it's for. -->
-
-<!-- STORY -->
-
-#### Story Source
-
-<!-- SOURCE -->
-
-<!-- STORY HIDE START -->
-
-The content here won't be shown in stories.
-
-<!-- STORY HIDE END -->
-
-#### Icons
+## Basic usage
+Import it via script tag:
 
 ```js
-import Button from 'components/button';
-
-render() {
-  return (
-    <Button icon="mail">Send mail</Button>
-    <Button icon="trash">Remove</Button>
-  );
-}
+<script>
+    import Button from 'svea';
+</script>
 ```
+
+Include it to the html:
+
+```html
+<Button>Click here</Button>
+```
+
+## Properties
+
+| Prop | Type | Description | Default |
+| ------------- |-------------| -----| -----|
+| disabled | boolean | specifies if the button should be disabled | false |
+| aria-label | value | specifies the aria-label for the button | null |
+| outline | boolean | specifies if the button should be outlined (styling) | true/false (tbd) |
 
 #### Button types
 
-Means `OutlinedButton`, `ContainedButton`, `TextButton`. It is possible to import as standalone component or pass `variant` property. Defautl value is `contained`.
-
-```js
-<Button variant="outlined" />
-<Button variant="contained" />
-<Button variant="text" />
-```
-
-Which one does @torvalds like most?
-
-- [ ] tiger \#
-- [ ] whale \*
-- [x] octocat \!
-
-> Stay hungry; stay foolish.
->
-> > Quality is better than quantity.
-> >
-> > > Life is not fair; get used to it.
+tbd
