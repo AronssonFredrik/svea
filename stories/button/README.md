@@ -27,6 +27,9 @@ Following props are available for `button`.
 | theme | value | specifies the theme for the button (styling) | default (tbd) |
 | outline | boolean | specifies if the button should be outlined (styling) | true/false (tbd) |
 
-#### Button types
+## Accessibility
 
-tbd
+| Keystroke | Notes |
+| --------- |------ |
+| `Enter` | triggers an action or event |
+| `Space` | triggers an action or event |
