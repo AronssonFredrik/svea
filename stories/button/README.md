@@ -1,56 +1,36 @@
-# Button :star:
+# Button
 
-Application button.
+## Summary
 
-```js
-import Button from 'components/Button';
+Declarative component [...] 
+
+## Basic usage
+Import it via script tag:
+
+```html
+<script>
+    import Button from 'svea';
+    ...
+</script>
+
+
+<Button>Click here</Button>
 ```
 
-<!-- Brief summary of what the component is, and what it's for. -->
+## Properties
+Following props are available for `button`.
 
-<!-- STORY -->
+| Prop | Type | Description | Default |
+| ------------- |-------------| -----| -----|
+| disabled | boolean | specifies if the button should be disabled | false |
+| aria-label | value | specifies the aria-label for the button | null |
+| theme | value | specifies the theme for the button (styling) | default (tbd) |
+| outline | boolean | specifies if the button should be outlined (styling) | true/false (tbd) |
+| on:click | event | trigger event | none |
 
-#### Story Source
+## Accessibility
 
-<!-- SOURCE -->
-
-<!-- STORY HIDE START -->
-
-The content here won't be shown in stories.
-
-<!-- STORY HIDE END -->
-
-#### Icons
-
-```js
-import Button from 'components/button';
-
-render() {
-  return (
-    <Button icon="mail">Send mail</Button>
-    <Button icon="trash">Remove</Button>
-  );
-}
-```
-
-#### Button types
-
-Means `OutlinedButton`, `ContainedButton`, `TextButton`. It is possible to import as standalone component or pass `variant` property. Defautl value is `contained`.
-
-```js
-<Button variant="outlined" />
-<Button variant="contained" />
-<Button variant="text" />
-```
-
-Which one does @torvalds like most?
-
-- [ ] tiger \#
-- [ ] whale \*
-- [x] octocat \!
-
-> Stay hungry; stay foolish.
->
-> > Quality is better than quantity.
-> >
-> > > Life is not fair; get used to it.
+| Keystroke | Notes |
+| --------- |------ |
+| `Enter` | triggers an action or event |
+| `Space` | triggers an action or event |
