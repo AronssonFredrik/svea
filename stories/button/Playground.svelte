@@ -13,6 +13,16 @@
 
   let singleCheckbox = false;
 </script>
+<style>
+  code {
+    background-color: #eee;
+    border-radius: 3px;
+    padding: 6px;
+    margin-top: 12px;
+    display: inline-block;
+    white-space: pre-wrap;
+  }
+</style>
 
 <h1>Playground</h1>
 Text:
@@ -36,6 +46,14 @@ Disabled:
 <Button
   outline={defaultOutline}
   theme={defaultTheme}
-  disabled={!!defaultDisabled}>
+  disabled={defaultDisabled}>
   {defaultText}
 </Button>
+
+<br />
+
+<code>
+&lt;Button outline="{defaultOutline}" theme="{defaultTheme}" disabled="{defaultDisabled}"&gt;
+  <strong>{defaultText}</strong>
+&lt;/Button&gt;
+</code>
