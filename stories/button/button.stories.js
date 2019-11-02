@@ -1,8 +1,9 @@
+import { Button } from '../../dist/svea.module';
 import BtnStyle from './BtnStyle.svelte';
-import Button from "../../src/components/Button.svelte";
+import Playground from './Playground.svelte';
+import ButtonReadme from './README.md';
 import { action } from '@storybook/addon-actions';
 
-import ButtonReadme from './README.md';
 
 export default {
   title: 'Button',
@@ -11,18 +12,16 @@ export default {
   }
 };
 
-export const primary = () => ({
-  Component: BtnStyle,
-  props: { text: 'Hello'}  
-});
+export const themes = () => ({ Component: BtnStyle });
 
-export const secondary = () => ({
-  Component: BtnStyle,
-  props: { text: 'Hello' }
-});
+export const playground = () => ({ Component: Playground });
 
-export const text = () => ({
+export const actions = () => ({
   Component: Button,
-  props: { text: 'Hello Button' },
-  on: { click: action('click') },
+  props: { 
+    text: 'Fire click events',
+    theme: 'primary'
+  },
+  on: { click: action('click') }
 });
+

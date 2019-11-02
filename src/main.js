@@ -1,4 +1,4 @@
 // Add components that should be shareable
 
-import Button from './components/Button.svelte';
+import Button from './components/button/Button.svelte';
 export { Button };
