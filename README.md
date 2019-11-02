@@ -14,18 +14,22 @@ npm install svea
 ## Accessibility
 Following a philosophy of using built in web- and browser-standards and thereby not overwriting or recreating a11y support. The goal is to follow WCAG of level AA.
 
-Do's
-* Using the HTML5 tags semantically
-* Supporting `aria`-attributes
+Do's:
 
-Don't
-* ~~Overwrite standardise keyboard navigation~~
-* ~~Overwrite focus-outline~~
+:heavy_check_mark: Using the HTML5 tags semantically
+
+:heavy_check_mark: Supporting `aria`-attributes, [read guidelines here](https://www.w3.org/TR/wai-aria-practices/)
+
+Don't:
+
+:x: ~~Overwrite standardise keyboard navigation~~
+
+:x: ~~Overwrite focus-outline~~
 
 ### List of A11y interactions
 | Component | Keystroke | Notes |
 | :--------- | :--------- | :----- |
-| Button | `enter` or `space` | using native click-functionality |
+| Button | `enter` or `space` | triggers an action or event |
 
 *Continuously updated as components are created*
 
