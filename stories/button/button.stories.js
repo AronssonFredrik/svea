@@ -16,9 +16,12 @@ export const themes = () => ({ Component: BtnStyle });
 
 export const playground = () => ({ Component: Playground });
 
-// export const text = () => ({
-//   Component: Button,
-//   props: { text: 'Hello Button' },
-//   on: { click: action('click') },
-// });
+export const actions = () => ({
+  Component: Button,
+  props: { 
+    text: 'Fire click events',
+    theme: 'primary'
+  },
+  on: { click: action('click') }
+});
 

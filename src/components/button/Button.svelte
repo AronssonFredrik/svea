@@ -11,7 +11,7 @@
   const dispatch = createEventDispatcher();
 
   let handleClick = event => {
-    dispatch("clickHandle", {
+    dispatch("click", {
       event: event
     });
   };

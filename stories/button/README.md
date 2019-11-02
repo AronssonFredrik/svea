@@ -26,6 +26,7 @@ Following props are available for `button`.
 | aria-label | value | specifies the aria-label for the button | null |
 | theme | value | specifies the theme for the button (styling) | default (tbd) |
 | outline | boolean | specifies if the button should be outlined (styling) | true/false (tbd) |
+| on:click | event | trigger event | none |
 
 ## Accessibility
 
