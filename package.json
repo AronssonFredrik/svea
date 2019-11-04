@@ -1,6 +1,6 @@
 {
   "name": "svea",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Component library",
   "main": "dist/svea.js",
   "module": "dist/svea.module.js",
