@@ -1,7 +1,6 @@
 language: node_js
 node_js:
-- "8"
-- node
+- "10"
 
 script: echo "Running tests against $(node -v)..."
 
@@ -13,7 +12,6 @@ jobs:
       script: 
         - npm test
     - stage: Produce Coverage
-      node_js: node
       before_script:
         - npm install
       script: 
