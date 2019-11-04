@@ -1,0 +1,18 @@
+language: node_js
+node_js:
+- "10"
+
+script: echo "Running tests against $(node -v)..."
+
+jobs:
+  include:
+    - stage: Unit test
+      before_script:
+        - npm install
+      script: 
+        - npm test
+    - stage: Produce Coverage
+      before_script:
+        - npm install
+      script: 
+        - jest --coverage --coverageReporters=text-lcov | coveralls

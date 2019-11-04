@@ -5,11 +5,8 @@
     outline,
     disabled = false,
     ariaLabel;
-
   import { createEventDispatcher } from "svelte";
-
   const dispatch = createEventDispatcher();
-
   let handleClick = event => {
     dispatch("click", {
       event: event
@@ -23,10 +20,8 @@
   $themes: "default", "primary", "secondary";
   $theme-color: $default $white $default;
   $theme-background: $lightgray $primary $secondary;
-
   $outline-color: $default $primary $secondary;
   $outline-border: $lightgray $primary $secondary;
-
   button {
     padding: 8px 16px;
     cursor: pointer;
@@ -57,12 +52,10 @@
       }
     }
   }
-
   :disabled {
     cursor: not-allowed;
   }
 </style>
-
 <!-- markup goes here -->
 <button
   on:click={handleClick}
