@@ -15,4 +15,4 @@ jobs:
       before_script:
         - npm install
       script: 
-        - npm test:coverage
+        - jest --coverage --coverageReporters=text-lcov | coveralls
