@@ -8,7 +8,13 @@ script: echo "Running tests against $(node -v)..."
 jobs:
   include:
     - stage: Unit test
-      script: npm test
+      before_script:
+        - npm install
+      script: 
+        - npm test
     - stage: Produce Coverage
       node_js: node
-      script: jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage
+      before_script:
+        - npm install
+      script: 
+        - test:coverage
