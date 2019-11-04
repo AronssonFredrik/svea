@@ -17,4 +17,4 @@ jobs:
       before_script:
         - npm install
       script: 
-        - test:coverage
+        - npm test:coverage
