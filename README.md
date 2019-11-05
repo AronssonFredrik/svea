@@ -1,5 +1,6 @@
 # Svea
 ![npm](https://img.shields.io/npm/v/svea.svg) ![Coverage Status](https://coveralls.io/repos/github/AronssonFredrik/svea/badge.svg)
+
 Component Library for Svelte v3, documented on [Storybook](https://aronssonfredrik.github.io/svea).
 
 
@@ -29,7 +30,7 @@ Don't:
 ### List of A11y interactions
 | Component | Keystroke | Notes |
 | :--------- | :--------- | :----- |
-| Button | `enter` or `space` | triggers an action or event |
+| Button | `enter` or `space` | activates the button |
 
 *Continuously updated as components are created*
 
