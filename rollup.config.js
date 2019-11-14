@@ -16,61 +16,118 @@ const {
 	name
 } = pkg;
 
-export default {
-	input: 'src/main.js',
-	output: [{
-			file: pkg.module,
-			format: 'es',
-			sourcemap: true,
-			name,
-		},
-		{
-			file: pkg.main,
-			format: 'umd',
-			sourcemap: true,
-			name,
-		}
-	],
-	plugins: [
-		svelte({
-			// enable run-time checks when not in production
-			dev: !production,
-			// we'll extract any component CSS out into
-			// a separate file — better for performance
-			css: css => css.write('dist/bundle.css'),
-			hydratable: true,
-			preprocess: {
-				style: ({ content, attributes }) => {
-					if (attributes.type !== 'text/scss') return;
-					return new Promise((fulfil, reject) => {
-						sass.render({
-							data: content,
-							includePaths: ['src'],
-							sourceMap: true,
-							outFile: 'x' // this is necessary, but is ignored
-						}, (err, result) => {
-							if (err) return reject(err);
-
-							fulfil({
-								code: result.css.toString(),
-								map: result.map.toString()
+export default [
+	// public
+	{
+		input: 'src/template/app.js',
+		output: [
+			{
+				sourcemap: true,
+				format: 'iife',
+				name: 'app',
+				file: 'public/bundle.js'
+			}
+		],
+		plugins: [
+			svelte({
+				// enable run-time checks when not in production
+				dev: !production,
+				// we'll extract any component CSS out into
+				// a separate file — better for performance
+				css: css => css.write('public/bundle.css'),
+				hydratable: true,
+				preprocess: {
+					style: ({ content, attributes }) => {
+						if (attributes.type !== 'text/scss') return;
+						return new Promise((fulfil, reject) => {
+							sass.render({
+								data: content,
+								includePaths: ['src'],
+								sourceMap: true,
+								outFile: 'x' // this is necessary, but is ignored
+							}, (err, result) => {
+								if (err) return reject(err);
+	
+								fulfil({
+									code: result.css.toString(),
+									map: result.map.toString()
+								});
 							});
 						});
-					});
+					}
 				}
+			}),
+			resolve({
+				browser: true,
+				dedupe: importee => importee === 'svelte' || importee.startsWith('svelte/')
+			}),
+			commonjs(),
+			!production && livereload('public'),
+			production && terser(),
+			production && analyze(),
+			production && bundleSize(),
+		],
+		watch: {
+			clearScreen: false,
+		}
+	},
+	// app module
+	{
+		input: 'src/main.js',
+		output: [
+			{
+				file: pkg.module,
+				format: 'es',
+				sourcemap: true,
+				name,
+			},
+			{
+				file: pkg.main,
+				format: 'umd',
+				sourcemap: true,
+				name,
 			}
-		}),
-		resolve({
-			browser: true,
-			dedupe: importee => importee === 'svelte' || importee.startsWith('svelte/')
-		}),
-		commonjs(),
-		!production && livereload('public'),
-		production && terser(),
-		production && analyze(),
-		production && bundleSize(),
-	],
-	watch: {
-		clearScreen: false,
+		],
+		plugins: [
+			svelte({
+				// enable run-time checks when not in production
+				dev: !production,
+				// we'll extract any component CSS out into
+				// a separate file — better for performance
+				css: css => css.write('dist/bundle.css'),
+				hydratable: true,
+				preprocess: {
+					style: ({ content, attributes }) => {
+						if (attributes.type !== 'text/scss') return;
+						return new Promise((fulfil, reject) => {
+							sass.render({
+								data: content,
+								includePaths: ['src'],
+								sourceMap: true,
+								outFile: 'x' // this is necessary, but is ignored
+							}, (err, result) => {
+								if (err) return reject(err);
+	
+								fulfil({
+									code: result.css.toString(),
+									map: result.map.toString()
+								});
+							});
+						});
+					}
+				}
+			}),
+			resolve({
+				browser: true,
+				dedupe: importee => importee === 'svelte' || importee.startsWith('svelte/')
+			}),
+			commonjs(),
+			production && terser(),
+			production && analyze(),
+			production && bundleSize(),
+		],
+		watch: {
+			clearScreen: false,
+		}
 	}
-}
+];
