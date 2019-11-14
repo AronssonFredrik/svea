@@ -1,7 +1,6 @@
 <script>
   import { Button } from "../../dist/svea.module";
   import style from "../../dist/bundle.css";
-  let handleClickEvent = event => console.log(event.detail.event);
 
   let theme;
   let themes = ["default", "primary", "secondary"];

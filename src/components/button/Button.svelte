@@ -5,13 +5,6 @@
     outline,
     disabled = false,
     ariaLabel;
-  import { createEventDispatcher } from "svelte";
-  const dispatch = createEventDispatcher();
-  let handleClick = event => {
-    dispatch("click", {
-      event: event
-    });
-  };
 </script>
 
 <style type="text/scss">
@@ -56,9 +49,10 @@
     cursor: not-allowed;
   }
 </style>
+
 <!-- markup goes here -->
 <button
-  on:click={handleClick}
+  on:click
   {disabled}
   class={theme ? `theme-${theme}` : 'theme-default'}
   class:outline
