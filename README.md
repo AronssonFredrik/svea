@@ -37,7 +37,7 @@ Don't:
 Follows [guidelines here](https://webaim.org/techniques/keyboard/#testing)
 
 
-## Development instructions
+## Development instructions (for working in project)
 
 ### Keeping up with changelog
 Commit Messages should follow following standards: 
@@ -60,3 +60,25 @@ Where `type` is one of the following:
 * `revert`
 * `style`
 * `test`
+
+### Working locally
+Begin by open it in localhost:
+```bash
+npm run autobuild
+
+npm run start:dev
+```
+
+### Working with storybook
+To start the storybook, follow the process:
+```bash
+# run whenever changes are made to the components
+npm run build
+
+npm run storybook
+```
+
+When done, `npm run build-storybook` can be used to release [Storybook](https://aronssonfredrik.github.io/svea)
+
+### Release instructions
+To be continued (..)
